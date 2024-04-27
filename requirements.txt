@@ -9,3 +9,4 @@ ruamel.yaml
 tblib
 tensorboard==2.0.2
 numpy<1.24
+wandb

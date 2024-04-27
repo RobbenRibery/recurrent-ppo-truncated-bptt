@@ -129,6 +129,10 @@ class Buffer():
             padding = torch.zeros(((delta_length,) + sequence.shape[1:]), dtype=sequence.dtype)
         else:
             padding = torch.zeros(delta_length, dtype=sequence.dtype)
+
+        if self.device.type == "cuda":
+            torch.cuda.empty_cache()
+
         # Concatenate the zeros to the sequence
         return torch.cat((sequence, padding), axis=0)
 
