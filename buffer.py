@@ -1,6 +1,7 @@
 from gymnasium import spaces
 import torch
 import numpy as np
+#torch.set_default_dtype(torch.float16)
 
 class Buffer():
     """The buffer stores and prepares the training data. It supports recurrent policies. """
