@@ -166,7 +166,7 @@ class Buffer():
                 start_index = done_index + 1
         return sequences, max_length
 
-    def recurrent_mini_batch_generator(self) -> dict:
+    def recurrent_mini_batch_generator(self):
         """A recurrent generator that returns a dictionary containing the data of a whole minibatch.
         In comparison to the none-recurrent one, this generator maintains the sequences of the workers' experience trajectories.
         

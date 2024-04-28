@@ -49,10 +49,14 @@ def main():
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
-            torch.set_default_tensor_type("torch.cuda.FloatTensor")
+            torch.set_default_dtype(torch.float32)
+            torch.set_default_device(device)
+            #torch.set_default_tensor_type("torch.cuda.FloatTensor")
     else:
         device = torch.device("cpu")
-        torch.set_default_tensor_type("torch.FloatTensor")
+        torch.set_default_dtype(torch.float32)
+        torch.set_default_device(device)
+        #torch.set_default_tensor_type("torch.FloatTensor")
 
     # Initialize the PPO trainer and commence training
     print(f"Training on device {device}")
